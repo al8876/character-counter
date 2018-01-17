@@ -6,35 +6,23 @@ var countLetters = function StringCharacterCounter(str) {
 // function that inputs argument and splits the string into individual letters
   var splitLetters = noSpaces.split('');
 
-// function that identifies unique letters (helloworld -> helowrd)
-  // var uniqueLetters = [];
+  // uniqueLetters = {};
   // for (var i = 0; i < splitLetters.length; i++) {
-  //   if (!uniqueLetters.includes(splitLetters[i])) {
-  //     uniqueLetters.push(splitLetters[i]);
+  //   if (!uniqueLetters[splitLetters[i]]) {
+  //       uniqueLetters[splitLetters[i]] = 1;
+  //   } else {
+  //       uniqueLetters[splitLetters[i]] += 1;
   //   }
-  // }
+  // };
 
   uniqueLetters = {};
-  for (var i = 0; i < splitLetters.length; i++) {
-    if (uniqueLetters[splitLetters[i]] === undefined) {
-        uniqueLetters[splitLetters[i]] = 0;
+  for (var letter of splitLetters) {
+    if (!uniqueLetters[letter]) {
+      uniqueLetters[letter] = 1;
+    } else {
+      uniqueLetters[letter] += 1;
     }
-    uniqueLetters[splitLetters[i]] += 1;
   };
-
-  // uniqueLetters = {};
-  // for (let i of splitLetters) {
-  //   if (uniqueLetters[splitLetters[i]] === undefined) {
-  //     uniqueLetters[splitLetters[i]] = 0;
-  //   }
-  // }
-
-// function that counts the total amount of each unique character
-// for (var i = 0; i < uniqueLetters.length; i++) {
-//   if (uniqueLetters[i])
-// }
-
-// function that pushes the total amount into an object
 
   return uniqueLetters;
 
